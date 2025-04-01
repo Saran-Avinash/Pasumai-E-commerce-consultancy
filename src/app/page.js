@@ -1,103 +1,268 @@
-import Image from "next/image";
+// import { ShoppingCart } from "lucide-react"
+import Link from "next/link"
+import ProductGrid from "@/components/product-grid"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="flex min-h-screen flex-col">
+      {/* Header */}
+      <header className="sticky top-0 z-10 border-b bg-background">
+        <div className="container flex h-16 items-center justify-between px-4">
+          <div className="flex items-center gap-6">
+            <Link href="/" className="text-xl font-bold">
+              ShopNow
+            </Link>
+            <nav className="hidden md:flex gap-6">
+              <Link href="#" className="text-sm font-medium hover:underline">
+                Home
+              </Link>
+              <Link href="#" className="text-sm font-medium hover:underline">
+                Shop
+              </Link>
+              <Link href="#" className="text-sm font-medium hover:underline">
+                Categories
+              </Link>
+              <Link href="#" className="text-sm font-medium hover:underline">
+                About
+              </Link>
+              <Link href="#" className="text-sm font-medium hover:underline">
+                Contact
+              </Link>
+            </nav>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="relative hidden md:block w-full max-w-sm">
+              <Input type="search" placeholder="Search products..." className="pr-8" />
+              <Button size="sm" variant="ghost" className="absolute right-0 top-0 h-full px-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="h-4 w-4"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+                <span className="sr-only">Search</span>
+              </Button>
+            </div>
+            <Button variant="outline" size="icon" className="relative">
+              {/* <ShoppingCart className="h-5 w-5" /> */}
+              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground">
+                3
+              </span>
+            </Button>
+          </div>
         </div>
+      </header>
+
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="relative">
+          <div className="bg-muted py-16 md:py-24">
+            <div className="container px-4 md:px-6">
+              <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2">
+                <div className="flex flex-col justify-center space-y-4">
+                  <div className="space-y-2">
+                    <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl">
+                      Healthy Groceries , daily!!
+                    </h1>
+                    <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                      Discover our latest arrivals with up to 40% off. Limited time offer.
+                    </p>
+                  </div>
+                  <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                    <Button size="lg">Shop Now</Button>
+                    <Button size="lg" variant="outline">
+                      View Lookbook
+                    </Button>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center">
+                  <img
+                    alt="Hero Image"
+                    className="aspect-[4/3] overflow-hidden rounded-xl object-cover"
+                    height="400"
+                    src="/hero.jpg"
+                    width="600"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Categories */}
+        <section className="py-12 md:py-16">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Shop by Category</h2>
+                <p className="max-w-[700px] text-muted-foreground md:text-xl">
+                  Browse our curated collections and find your perfect style
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4 mt-8 md:grid-cols-4">
+              {["Fruits", "Vegetables", "Snacks", "Spices"].map((category) => (
+                <Link key={category} href="#" className="group relative overflow-hidden rounded-lg">
+                  <div className="aspect-square bg-muted relative overflow-hidden rounded-lg">
+                    <img
+                      src={`/${category}.jpg`}
+                      alt={category}
+                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/35 flex items-center justify-center">
+                      <h3 className="text-xl font-medium text-white">{category}</h3>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Products */}
+        <section className="py-12 md:py-16 bg-muted/50">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Featured Products</h2>
+                <p className="max-w-[700px] text-muted-foreground md:text-xl">
+                  Our most popular items handpicked for you
+                </p>
+              </div>
+            </div>
+            <ProductGrid />
+          </div>
+        </section>
+
+        {/* Newsletter */}
+        <section className="py-12 md:py-16">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Stay Updated</h2>
+                  <p className="max-w-[600px] text-muted-foreground md:text-xl">
+                    Subscribe to our newsletter to receive updates on new arrivals, special offers and other discount
+                    information.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <div className="grid w-full gap-2">
+                  <form className="flex w-full max-w-sm items-center space-x-2">
+                    <Input type="email" placeholder="Email" className="flex-1" />
+                    <Button type="submit">Subscribe</Button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="border-t bg-muted/50">
+        <div className="container px-4 py-8 md:px-6 md:py-12">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="space-y-4">
+              <h3 className="text-lg font-medium">ShopNow</h3>
+              <p className="max-w-xs text-sm text-muted-foreground">
+                Your one-stop destination for trendy fashion and accessories.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-lg font-medium">Shop</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="#" className="hover:underline">
+                    All Products
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:underline">
+                    New Arrivals
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:underline">
+                    Best Sellers
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:underline">
+                    Sale
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-lg font-medium">Support</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="#" className="hover:underline">
+                    Contact Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:underline">
+                    FAQs
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:underline">
+                    Shipping & Returns
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:underline">
+                    Size Guide
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="space-y-4">
+              <h3 className="text-lg font-medium">Company</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <Link href="#" className="hover:underline">
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:underline">
+                    Careers
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:underline">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:underline">
+                    Terms of Service
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 border-t pt-8 text-center text-sm">
+            <p>© 2024 ShopNow. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
+
