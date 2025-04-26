@@ -116,7 +116,7 @@ export default function Home() {
                 <Link key={category} href={`/product/${category.toLowerCase()}`} className="group relative overflow-hidden rounded-lg">
                   <div className="aspect-square bg-muted relative overflow-hidden rounded-lg">
                     <img
-                      src={`/${category}.jpg`}
+                      src={`/${category.toLowerCase()}.jpg`}
                       alt={category}
                       className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
