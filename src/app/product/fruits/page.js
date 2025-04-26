@@ -3,7 +3,7 @@ import Image from "next/image";
 
 // get the static image from the google cloud
 export default async function ProductsPage() {
-  const res = await fetch("http://localhost:3000/api/get-product/fruit", {
+  const res = await fetch("https://pasumai-e-commerce-consultancy.vercel.app/api/get-product/fruit", {
     cache: "no-store",
   });
   const products = await res.json();

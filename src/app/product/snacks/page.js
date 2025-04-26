@@ -2,7 +2,7 @@ import Image from "next/image";
 
 // Use async directly inside the server component
 export default async function ProductsPage() {
-  const res = await fetch("http://localhost:3000/api/get-product/snake", {
+  const res = await fetch("https://pasumai-e-commerce-consultancy.vercel.app/api/get-product/snake", {
     cache: "no-store", // Fetch data on every request
   });
   const products = await res.json();
