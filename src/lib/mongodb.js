@@ -1,7 +1,7 @@
 // lib/mongodb.js
 import { MongoClient } from 'mongodb';
 
-const uri = "mongodb+srv://saranbaskarmsp:saran123@supermarket.4rce2jo.mongodb.net/?retryWrites=true&w=majority&appName=SuperMarket"
+const uri = process.env.DB_URL;
 const options = {};
 
 let client;
