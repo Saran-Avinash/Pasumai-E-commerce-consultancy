@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     const db = client.db('SuperMarket'); // replace with your actual db name
     const productsCollection = db.collection('products');
 
-    const { name, price, description, type, quantity } = req.body;
+    const { name, price, description, type, quantity, fileName } = req.body;
 
     if (!name || !price) {
       return res.status(400).json({ message: 'Name and price are required' });
@@ -23,6 +23,7 @@ export default async function handler(req, res) {
       description: description || '',
       type,
       quantity,
+      fileName,
       createdAt: new Date(),
     };
 
