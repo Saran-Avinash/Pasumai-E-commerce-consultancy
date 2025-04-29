@@ -27,7 +27,6 @@ export default async function ProductsPage() {
               <Image
                 src={product.cdnPath}
                 alt={product.name}
-                fill
                 className="object-cover transition-transform duration-500 hover:scale-110"
               />
             </div>
