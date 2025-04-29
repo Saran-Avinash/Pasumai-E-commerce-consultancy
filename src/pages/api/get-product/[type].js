@@ -11,7 +11,7 @@ export default async function handler(req, res) {
         const productsCollection = db.collection("products"); // Assuming 'products' is the collection name
 
     // Fetch all products
-    const products = await productsCollection.find({type : req.query.type.toLowerCase()}).toArray();
+    const products = await productsCollection.find({type : req.query.type}).toArray();
 
     return res.json(products);
   } catch (error) {

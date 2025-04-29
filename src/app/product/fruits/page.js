@@ -25,7 +25,7 @@ export default async function ProductsPage() {
           >
             <div className="relative w-full h-100 rounded-t-2xl overflow-hidden">
               <Image
-                src={`/products/${product.name}.jpg`}
+                src={product.cdnPath}
                 alt={product.name}
                 fill
                 className="object-cover transition-transform duration-500 hover:scale-110"
