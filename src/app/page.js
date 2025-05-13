@@ -15,24 +15,24 @@ export default function Home() {
               ShopNow
             </Link>
             <nav className="hidden md:flex gap-6">
-              <Link href="#" className="text-sm font-medium hover:underline">
+              <Link href="/" className="text-sm font-medium hover:underline">
                 Home
               </Link>
-              <Link href="#" className="text-sm font-medium hover:underline">
-                Shop
+              <Link href="/product/fruits" className="text-sm font-medium hover:underline">
+                Fruits
               </Link>
-              <Link href="#" className="text-sm font-medium hover:underline">
-                Categories
+              <Link href="/product/vegetables" className="text-sm font-medium hover:underline">
+                Vegetables
               </Link>
-              <Link href="#" className="text-sm font-medium hover:underline">
-                About
+              <Link href="/produdct/snacks" className="text-sm font-medium hover:underline">
+                Snacks
               </Link>
-              <Link href="#" className="text-sm font-medium hover:underline">
-                Contact
+              <Link href="/product/spices" className="text-sm font-medium hover:underline">
+                Spices
               </Link>
             </nav>
           </div>
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             <div className="relative hidden md:block w-full max-w-sm">
               <Input type="search" placeholder="Search products..." className="pr-8" />
               <Button size="sm" variant="ghost" className="absolute right-0 top-0 h-full px-3">
@@ -56,11 +56,11 @@ export default function Home() {
             </div>
             <Button variant="outline" size="icon" className="relative">
               {/* <ShoppingCart className="h-5 w-5" /> */}
-              <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground">
+              {/* <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs text-primary-foreground">
                 3
               </span>
-            </Button>
-          </div>
+            </Button> */}
+          {/* </div> */}
         </div>
       </header>
 
@@ -80,10 +80,8 @@ export default function Home() {
                     </p>
                   </div>
                   <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                    <Button size="lg">Shop Now</Button>
-                    <Button size="lg" variant="outline">
-                      View Lookbook
-                    </Button>
+                    <Link href="/product/fruits" className="bg-black text-white p-3 "  size="lg">Shop Now</Link>
+                    
                   </div>
                 </div>
                 <div className="flex items-center justify-center">
@@ -146,7 +144,7 @@ export default function Home() {
         </section>
 
         {/* Newsletter */}
-        <section className="py-12 md:py-16">
+        {/* <section className="py-12 md:py-16">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <div className="flex flex-col justify-center space-y-4">
@@ -168,7 +166,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
 
       {/* Footer */}
@@ -185,28 +183,33 @@ export default function Home() {
               <h3 className="text-lg font-medium">Shop</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link href="#" className="hover:underline">
+                  <Link href="/" className="hover:underline">
                     All Products
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:underline">
-                    New Arrivals
+                  <Link href="/product/fruits" className="hover:underline">
+                    Fruits
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:underline">
-                    Best Sellers
+                  <Link href="/product/vegetables" className="hover:underline">
+                    Vegetables
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="hover:underline">
-                    Sale
+                  <Link href="/product/snacks" className="hover:underline">
+                    Snacks
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/product/spices" className="hover:underline">
+                    Spices
                   </Link>
                 </li>
               </ul>
             </div>
-            <div className="space-y-4">
+            {/* <div className="space-y-4">
               <h3 className="text-lg font-medium">Support</h3>
               <ul className="space-y-2 text-sm">
                 <li>
@@ -230,11 +233,11 @@ export default function Home() {
                   </Link>
                 </li>
               </ul>
-            </div>
+            </div> */}
             <div className="space-y-4">
               <h3 className="text-lg font-medium">Company</h3>
-              <ul className="space-y-2 text-sm">
-                <li>
+              {/* <ul className="space-y-2 text-sm"> */}
+                {/* <li>
                   <Link href="#" className="hover:underline">
                     About Us
                   </Link>
@@ -254,7 +257,8 @@ export default function Home() {
                     Terms of Service
                   </Link>
                 </li>
-              </ul>
+              </ul> */}
+              <p>We are based on coimbatore and sell healthy, delicious products</p>
             </div>
           </div>
           <div className="mt-8 border-t pt-8 text-center text-sm">
