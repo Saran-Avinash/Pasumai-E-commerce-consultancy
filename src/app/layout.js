@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-// import {CartProvider } from "../context/CartContext";
-
+import { CartProvider } from "@/context/CartContext";
+import Link from "next/link";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,7 +23,43 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-                {children}
+       
+         <header className="sticky top-0 z-10 border-b bg-background">
+        <div className="container flex h-16 items-center justify-between px-4">
+          <div className="flex items-center gap-6">
+            <Link href="/" className="text-xl font-bold">
+              Pasumai
+            </Link>
+            <nav className="hidden md:flex gap-6">
+              <Link href="/" className="text-sm font-medium hover:underline">
+                Home
+              </Link>
+              <Link href="/product/fruits" className="text-sm font-medium hover:underline">
+                Fruits
+              </Link>
+              <Link href="/product/vegetables" className="text-sm font-medium hover:underline">
+                Vegetables
+              </Link>
+              <Link href="/product/snacks" className="text-sm font-medium hover:underline">
+                Snacks
+              </Link>
+              <Link href="/product/spices" className="text-sm font-medium hover:underline">
+                Spices
+              </Link>
+            </nav>
+          </div>
+            <div>
+    <Link href="/route" className="text-sm font-medium hover:underline">
+      My Address
+    </Link>
+  </div>
+        </div>
+      </header>
+        <CartProvider>
+          
+          {children}
+        </CartProvider>
+           
 
       </body>
     </html>

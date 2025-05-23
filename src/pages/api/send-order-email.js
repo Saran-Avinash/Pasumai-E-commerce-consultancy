@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import clientPromise from "@/lib/mongodb";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).end();
@@ -36,5 +37,24 @@ export default async function handler(req, res) {
   } catch (error) {
     console.error("Email error:", error);
     res.status(500).json({ message: "Failed to send email." });
+  }
+
+  try{
+    const client = await clientPromise;
+    const db = client.db('SuperMarket');
+    const orderCollection = db.collection('orders');
+
+    const newOrder = {
+      name, 
+      phone, address, cart,
+      createdAt: new Date(),
+    }
+
+    const result = orderCollection.insertOne(newOrder);
+    res.status(201).json({ message: 'Order added', productId: result.insertedId });
+
+  }catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Something went wrong' });
   }
 }

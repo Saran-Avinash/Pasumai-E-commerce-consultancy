@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-10 border-b bg-background">
+      {/* <header className="sticky top-0 z-10 border-b bg-background">
         <div className="container flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-6">
             <Link href="/" className="text-xl font-bold">
@@ -31,7 +31,7 @@ export default function Home() {
                 Spices
               </Link>
             </nav>
-          </div>
+          </div> */}
           {/* <div className="flex items-center gap-4">
             <div className="relative hidden md:block w-full max-w-sm">
               <Input type="search" placeholder="Search products..." className="pr-8" />
@@ -61,8 +61,8 @@ export default function Home() {
               </span>
             </Button> */}
           {/* </div> */}
-        </div>
-      </header>
+        {/* </div>
+      </header> */}
 
       <main className="flex-1">
         {/* Hero Section */}
@@ -174,7 +174,7 @@ export default function Home() {
         <div className="container px-4 py-8 md:px-6 md:py-12">
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div className="space-y-4">
-              <h3 className="text-lg font-medium">ShopNow</h3>
+              <h3 className="text-lg font-medium">Pasumai</h3>
               <p className="max-w-xs text-sm text-muted-foreground">
                 Your one-stop destination for trendy fashion and accessories.
               </p>
@@ -262,7 +262,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8 border-t pt-8 text-center text-sm">
-            <p>© 2024 ShopNow. All rights reserved.</p>
+            <p>© 2025 Pasumai. All rights reserved.</p>
           </div>
         </div>
       </footer>

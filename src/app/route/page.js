@@ -133,7 +133,7 @@ const LocationFormWithMap = () => {
           <label style={styles.label}>Full Address:</label>
           <textarea style={styles.input} value={fullAddress} rows={2} readOnly />
 
-          <button type="submit" style={styles.button}>Submit</button>
+          <button type="submit" style={styles.button}>My Address</button>
         </form>
       </div>
 
